@@ -1,0 +1,23 @@
+version: '3'
+services:
+  neptune:
+    image: tinkerpop/gremlin-server
+    ports:
+      - 8182:8182
+    environment:
+      VIRTUAL_HOST: gremlin.docker
+      VIRTUAL_PORT: 8182
+  neptune-ui:
+    build:
+      context: ./gremlin-ui
+      args:
+        http_proxy: ${http_proxy}
+        https_proxy: ${https_proxy}
+        no_proxy: ${no_proxy}
+    ports:
+      - "8183:80"
+    depends_on:
+      - neptune
+    environment:
+      VIRTUAL_PORT: 8183
+      VIRTUAL_HOST: gremlin-ui.docker
