@@ -7,3 +7,7 @@ a UI for it.
 
 If you are running dory the services will be at `gremlin-ui.docker:8183` and 
 `gremlin.docker:8182`.
+
+## credit
+
+A good chunk of this came from (https://github.com/joov/gremlin-demo)[https://github.com/joov/gremlin-demo]
